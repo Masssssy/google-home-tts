@@ -19,8 +19,7 @@ print(cast.device)
 
 tts = gTTS(text=text, lang='en-us')
 
-dirpath = os.getcwd()
-print("asdasdasdas" + dirpath)
+dirpath = os.path.split(os.path.realpath(__file__))[0]
 tts.save(dirpath + "/out.mp3")
 
 mc = cast.media_controller
