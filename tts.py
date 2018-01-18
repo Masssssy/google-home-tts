@@ -3,7 +3,7 @@ import time
 import pychromecast
 import sys
 from gtts import gTTS
-
+import os
 
 cast = pychromecast.Chromecast('192.168.1.77')
 
@@ -19,7 +19,9 @@ print(cast.device)
 
 tts = gTTS(text=text, lang='en-us')
 
-tts.save("out.mp3")
+dirpath = os.getcwd()
+print("asdasdasdas" + dirpath)
+tts.save(dirpath + "/out.mp3")
 
 mc = cast.media_controller
 mc.play_media('http://192.168.1.216:8000/out.mp3', 'audio/mp3')
